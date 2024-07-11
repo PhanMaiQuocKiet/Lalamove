@@ -1,4 +1,4 @@
-package com.example.lalamove;
+package com.example.lalamove.View;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,14 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.example.lalamove.R;
+import com.example.lalamove.View.Login.LoginActivity;
 
 public class GioiThieu extends AppCompatActivity {
     private ViewPager viewPager;
@@ -112,7 +113,7 @@ public class GioiThieu extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(GioiThieu.this, MainActivity.class));
+        startActivity(new Intent(GioiThieu.this, LoginActivity.class));
         finish();
     }
 

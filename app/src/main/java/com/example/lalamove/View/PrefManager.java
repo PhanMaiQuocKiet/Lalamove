@@ -1,4 +1,4 @@
-package com.example.lalamove;
+package com.example.lalamove.View;
 import android.content.Context;
 import android.content.SharedPreferences;
 public class PrefManager {
