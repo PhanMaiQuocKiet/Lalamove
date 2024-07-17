@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
 
     <TextView
         android:id="@+id/title_text"
@@ -24,40 +25,43 @@
         android:padding="8dp">
 
         <EditText
-            android:id="@+id/phone_number"
+            android:id="@+id/edt_sodienthoai_khachhang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Số điện thoại"
             android:inputType="phone" />
     </LinearLayout>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/email"
+        android:id="@+id/edt_email_khachang"
         android:hint="Email (tùy chọn)"
         android:inputType="textEmailAddress"
         android:layout_below="@id/phone_number_input"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp"/>
+
     <LinearLayout
         android:id="@+id/password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/email"
+        android:layout_below="@id/edt_email_khachang"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp">
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/edt_matkhau_khachhang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Mật khẩu (tối thiểu 6 ký tự)"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:autofillHints="" />
 
         <ImageView
             android:id="@+id/show_password"
@@ -65,25 +69,44 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_show"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/TenTaiKhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/password_input"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_ten_khachhang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Tên Của bạn"
+            android:inputType="text" />
     </LinearLayout>
     <CheckBox
-        android:id="@+id/checkbox"
+        android:id="@+id/cb_dieukhoan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tôi muốn nhận các ưu đãi và khuyến mãi từ Lalamove. Tôi đã đọc và đồng ý với các điều khoản Quảng Cáo Trực tiếp trong Chính sách Quyền Riêng Tư."
-        android:layout_below="@id/password_input"
+        android:layout_below="@id/TenTaiKhoan"
         android:layout_marginTop="16dp" />
     <TextView
         android:id="@+id/terms_conditions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bằng cách nhấp vào Đăng ký bên dưới, bạn đã đọc toàn bộ văn bản và đồng ý với Điều khoản và điều kiện sử dụng dịch vụ và Chính sách bảo mật."
-        android:layout_below="@id/checkbox"
+        android:layout_below="@id/cb_dieukhoan"
         android:layout_marginTop="16dp"
         android:textColor="@android:color/darker_gray" />
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/btn_DangKy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đăng ký"
@@ -92,12 +115,12 @@
         android:layout_below="@id/terms_conditions"
         android:layout_marginTop="16dp" />
     <TextView
-        android:id="@+id/already_have_account"
+        android:id="@+id/tv_DaCoTaiKhoan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đã có tài khoản?"
         android:textColor="@color/orange_fresh"
-        android:layout_below="@id/register_button"
+        android:layout_below="@id/btn_DangKy"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
 </RelativeLayout>

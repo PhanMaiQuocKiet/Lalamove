@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/nav_orders"
+        android:icon="@drawable/ic_orders"
+        android:title="Đơn hàng"
+        />
+    <item
+        android:id="@+id/nav_recharge"
+        android:icon="@drawable/ic_recharge"
+        android:title="Nạp tiền"
+        />
+    <item
+        android:id="@+id/nav_favorite_drivers"
+        android:icon="@drawable/ic_following"
+        android:title="Tài xế yêu thích" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Cài đặt khác" />
+    <item
+        android:id="@+id/nav_help_center"
+        android:icon="@drawable/ic_help_center"
+        android:title="Trung tâm trợ giúp" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Đăng Xuất" />
 </menu>

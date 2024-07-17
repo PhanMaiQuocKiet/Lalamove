@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lalamove"
         tools:targetApi="31">
 
-        <activity android:name=".View.GioiThieu" android:exported="true">
+        <activity android:name=".View.BatDau.GioiThieu" android:exported="false">
+
+        </activity>
+        <activity android:name=".View.Login.LoginActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.Login.LoginActivity" android:exported="true">
-
-        </activity>
-        <activity android:name=".View.Login.RegisterActivity">
+        <activity android:name=".View.Home.KhachHang.DangKyKhachHangActivity">
 
 
         </activity>
         <activity android:name=".View.Login.ForgotPasswordActivity">
 
+
+        </activity>
+        <activity android:name=".DonHangActivity" android:exported="false">
+
+        </activity>
+        <activity android:name="View.Login.LoginActivity" android:exported="false"
+            tools:ignore="MissingClass">
+
+
+        </activity>
+        <activity android:name=".ListLoaiXe.FragmentLoaiXe" android:exported="false">
+
+        </activity>
+        <activity android:name=".ListLoaiXe.BuocTiepTheoActivity">
+        </activity>
+        <activity android:name=".ListLoaiXe.MenuThanhToanActivity" android:exported="false">
+
+
+        </activity>
+        <activity android:name=".View.Home.KhachHang.Home_khachhang_Activity" android:exported="false">
+
+        </activity>
+        <activity android:name=".View.Home.QuanLy.Home_QuanLy_Activity" android:exported="false">
+
+        </activity>
+        <activity android:name=".View.Home.TaiXe.Home_TaiXe_Activity" android:exported="false">
 
         </activity>
     </application>

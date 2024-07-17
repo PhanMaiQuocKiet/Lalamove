@@ -1,4 +1,4 @@
-package com.example.lalamove.View;
+package com.example.lalamove.View.BatDau;
 import android.content.Context;
 import android.content.SharedPreferences;
 public class PrefManager {
