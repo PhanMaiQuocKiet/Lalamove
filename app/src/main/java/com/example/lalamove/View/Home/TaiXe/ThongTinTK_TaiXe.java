@@ -9,10 +9,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import android.content.Intent;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lalamove.R;
+import com.example.lalamove.View.Home.KhachHang.Home_KhachHang;
+import com.example.lalamove.View.Home.KhachHang.ThongTinTK_KhachHang;
 import com.example.lalamove.View.model.TableTaiXe.TaiXeSQL;
 
 public class ThongTinTK_TaiXe extends AppCompatActivity {
@@ -53,79 +57,90 @@ public class ThongTinTK_TaiXe extends AppCompatActivity {
         imgEditMaPhuongTien = findViewById(R.id.insert_maphuongtien);
         imgEditBienSoPhuongTien = findViewById(R.id.insert_biensophuongtien);
 
-        // Khởi tạo đối tượng TaiXeSQL
         taiXeSQL = new TaiXeSQL();
 
-        // Xử lý sự kiện nhấn nút quay lại
-        btnBack.setOnClickListener(v -> finish());
-
-        // Xử lý sự kiện nhấn nút sửa tên
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(ThongTinTK_TaiXe.this, TrangChuTaiXeActivity.class);
+            startActivity(intent);
+        });
         imgEditName.setOnClickListener(v -> updateName());
 
-        // Xử lý sự kiện nhấn nút sửa số điện thoại
         imgEditPhone.setOnClickListener(v -> updatePhone());
 
-        // Xử lý sự kiện nhấn nút sửa chức vụ
         imgEditChucVu.setOnClickListener(v -> updateChucVu());
 
-        // Xử lý sự kiện nhấn nút sửa mã phương tiện
         imgEditMaPhuongTien.setOnClickListener(v -> updateMaPhuongTien());
 
-        // Xử lý sự kiện nhấn nút sửa biển số phương tiện
         imgEditBienSoPhuongTien.setOnClickListener(v -> updateBienSoPhuongTien());
     }
 
     private void updateName() {
         String name = edtName.getText().toString().trim();
-        if (!name.isEmpty()) {
-            // Thực hiện cập nhật tên
-            // Đây có thể là một phương thức cập nhật dữ liệu vào cơ sở dữ liệu
-            // Ví dụ: taiXeSQL.updateName(name, this);
-            Toast.makeText(this, "Tên đã được cập nhật", Toast.LENGTH_SHORT).show();
+        String phone = edtPhone.getText().toString().trim();
+        if (!name.isEmpty() && !phone.isEmpty()) {
+            taiXeSQL.updateName(phone, name, this);
         } else {
-            Toast.makeText(this, "Vui lòng nhập tên", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Vui lòng nhập tên và số điện thoại", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void updatePhone() {
-        String phone = edtPhone.getText().toString().trim();
-        if (!phone.isEmpty()) {
-            // Thực hiện cập nhật số điện thoại
-            // Ví dụ: taiXeSQL.updatePhone(phone, this);
-            Toast.makeText(this, "Số điện thoại đã được cập nhật", Toast.LENGTH_SHORT).show();
+        String newPhone = edtPhone.getText().toString().trim();
+        String oldPhone = "";
+
+        if (!newPhone.isEmpty()) {
+            if (!oldPhone.isEmpty()) {
+                taiXeSQL.updatePhone(oldPhone, newPhone, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại cũ", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, "Vui lòng nhập số điện thoại", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Vui lòng nhập số điện thoại mới", Toast.LENGTH_SHORT).show();
         }
     }
 
+
     private void updateChucVu() {
-        String chucVu = edtChucVu.getText().toString().trim();
-        if (!chucVu.isEmpty()) {
-            // Thực hiện cập nhật chức vụ
-            // Ví dụ: taiXeSQL.updateChucVu(chucVu, this);
-            Toast.makeText(this, "Chức vụ đã được cập nhật", Toast.LENGTH_SHORT).show();
+        String newChucVu = edtChucVu.getText().toString().trim();
+        String phone = "";
+
+        if (!newChucVu.isEmpty()) {
+            if (!phone.isEmpty()) {
+                taiXeSQL.updateChucVu(phone, newChucVu, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại", Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, "Vui lòng nhập chức vụ", Toast.LENGTH_SHORT).show();
         }
     }
 
+
     private void updateMaPhuongTien() {
-        String maPhuongTien = edtMaPhuongTien.getText().toString().trim();
-        if (!maPhuongTien.isEmpty()) {
-            // Thực hiện cập nhật mã phương tiện
-            // Ví dụ: taiXeSQL.updateMaPhuongTien(maPhuongTien, this);
-            Toast.makeText(this, "Mã phương tiện đã được cập nhật", Toast.LENGTH_SHORT).show();
+        String newMaPhuongTien = edtMaPhuongTien.getText().toString().trim();
+        String phone = "";
+
+        if (!newMaPhuongTien.isEmpty()) {
+            if (!phone.isEmpty()) {
+                taiXeSQL.updateMaPhuongTien(phone, newMaPhuongTien, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại", Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, "Vui lòng nhập mã phương tiện", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void updateBienSoPhuongTien() {
-        String bienSoPhuongTien = edtBienSoPhuongTien.getText().toString().trim();
-        if (!bienSoPhuongTien.isEmpty()) {
-            // Thực hiện cập nhật biển số phương tiện
-            // Ví dụ: taiXeSQL.updateBienSoPhuongTien(bienSoPhuongTien, this);
-            Toast.makeText(this, "Biển số phương tiện đã được cập nhật", Toast.LENGTH_SHORT).show();
+        String newBienSoPhuongTien = edtBienSoPhuongTien.getText().toString().trim();
+        String phone = "";
+
+        if (!newBienSoPhuongTien.isEmpty()) {
+            if (!phone.isEmpty()) {
+                taiXeSQL.updateBienSoPhuongTien(phone, newBienSoPhuongTien, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại", Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, "Vui lòng nhập biển số phương tiện", Toast.LENGTH_SHORT).show();
         }
