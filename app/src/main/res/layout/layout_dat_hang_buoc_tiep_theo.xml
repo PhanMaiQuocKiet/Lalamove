@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".View.Home.KhachHang.Home_khachhang_Activity">
+    tools:context=".View.Home.KhachHang.Home_KhachHang">
 
     <!-- Back Button -->
     <ImageButton
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_back_bsct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_arrow_back_24"
@@ -39,24 +39,47 @@
         android:layout_below="@id/title"
         android:layout_marginTop="8dp" />
 
-    <!-- Add Details Button -->
-    <EditText
-        android:id="@+id/btn_add_details"
+    <!-- Note to Driver -->
+    <RelativeLayout
+        android:id="@+id/rlt_ThemChiTietHangHoa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Thêm chi tiết hàng hóa của bạn"
         android:padding="16dp"
         android:layout_below="@id/divider"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/vehicle_item_background" />
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/img_icon_ChiTiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hanghoa_30"
+           />
+
+        <TextView
+            android:id="@+id/tv_ChiTietHangHoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thêm chi tiết hàng hóa"
+            android:layout_toEndOf="@id/img_icon_ChiTiet"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phai_25"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
 
     <!-- Note to Driver -->
     <RelativeLayout
-        android:id="@+id/note_to_driver"
+        android:id="@+id/rlt_GhiChu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:layout_below="@id/btn_add_details"
+        android:layout_below="@id/rlt_ThemChiTietHangHoa"
         android:layout_marginTop="16dp">
 
         <ImageView
@@ -65,53 +88,23 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_message" />
 
-        <EditText
-            android:id="@+id/note_text"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_GhiChuChoTaiXe"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:hint="Ghi chú cho tài xế"
             android:layout_toEndOf="@id/note_icon"
             android:layout_marginStart="16dp"
-            android:layout_centerVertical="true" />
+            android:textSize="15dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_centerVertical="true"/>
 
         <ImageView
             android:id="@+id/note_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/btn_right"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true" />
-    </RelativeLayout>
-
-    <!-- Phone Number -->
-    <RelativeLayout
-        android:id="@+id/phone_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_below="@id/note_to_driver"
-        android:layout_marginTop="16dp">
-
-        <ImageView
-            android:id="@+id/phone_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_phone" />
-
-        <EditText
-            android:id="@+id/phone_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Nhập sđt của bạn"
-            android:layout_toEndOf="@id/phone_icon"
-            android:layout_marginStart="16dp"
-            android:layout_centerVertical="true" />
-
-        <ImageView
-            android:id="@+id/phone_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/btn_right"
+            android:src="@drawable/ic_phai_25"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true" />
     </RelativeLayout>
@@ -122,14 +115,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:layout_below="@id/phone_number"
+        android:layout_below="@id/rlt_GhiChu"
         android:layout_marginTop="16dp">
 
         <ImageView
             android:id="@+id/favorite_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_following" />
+            android:src="@drawable/ic_heart_35" />
 
         <TextView
             android:id="@+id/favorite_text"
@@ -138,6 +131,7 @@
             android:text="Ưu tiên tài xế yêu thích"
             android:layout_toEndOf="@id/favorite_icon"
             android:layout_marginStart="16dp"
+            android:textSize="16dp"
             android:layout_centerVertical="true" />
 
         <Switch
@@ -148,6 +142,62 @@
             android:layout_centerVertical="true" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rlt_SoDienThoaiNguoiGui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:layout_below="@id/favorite_driver"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/ic_DienThoaiGui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_dienthoai_30"
+            android:padding="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:id="@+id/edt_SoDienThoaiNguoiGui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Số Điện thoại người gửi"
+            android:layout_toEndOf="@id/ic_DienThoaiGui"
+            android:layout_marginStart="16dp"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:inputType="phone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlt_SoDienThoaiNguoiNhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:layout_below="@id/rlt_SoDienThoaiNguoiGui"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/ic_DienThoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_dienthoai_30"
+            android:padding="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:id="@+id/edt_SoDienThoaiNguoiNhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Số Điện thoại người nhận"
+            android:layout_toEndOf="@id/ic_DienThoai"
+            android:layout_marginStart="16dp"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:inputType="phone"/>
+    </RelativeLayout>
+
     <!-- Loading -->
     <RelativeLayout
         android:id="@+id/loading"
@@ -156,68 +206,42 @@
         android:padding="16dp"
         android:layout_below="@id/favorite_driver"
         android:layout_marginTop="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/loading_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_coins" />
-
-            <TextView
-                android:id="@+id/loading_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Đang tải..." />
-
-
-        </LinearLayout>
+        <!-- Nội dung của loading -->
     </RelativeLayout>
-    <RelativeLayout
+
+    <!-- Thanh toán -->
+    <LinearLayout
+        android:id="@+id/thanhtoantt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="10dp"
         android:background="#FFFFFF"
-        android:layout_below="@id/loading">
+        android:layout_alignParentBottom="true">
 
         <TextView
-            android:id="@+id/total_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tổng cộng"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/total_amount"
+            android:id="@+id/tv_BuocTiepTheo_tongtien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="₫ 17.280"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_below="@id/total_text"
-            android:layout_alignStart="@id/total_text"
-            android:layout_marginTop="8dp" />
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/btn_buoctieptheo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/total_amount"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/orange_fresh"
-            android:text="Xem lại đơn hàng"
+            android:text="Đặt hàng"
             android:textColor="@android:color/white" />
-    </RelativeLayout>
-
+    </LinearLayout>
 
 </RelativeLayout>

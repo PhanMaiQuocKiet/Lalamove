@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Nút Back -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Tên Tài Khoản Lalamove -->
+    <TextView
+        android:id="@+id/account_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tài Khoản Lalamove"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/btn_back"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Khung chứa Số dư và nút Nạp tiền -->
+    <LinearLayout
+        android:id="@+id/balance_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/edit_text_background"
+        android:layout_below="@id/account_text"
+        android:layout_marginTop="16dp"
+        android:padding="16dp">
+
+        <!-- Số dư -->
+        <TextView
+            android:id="@+id/balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số dư:"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <!-- Số dư tiền -->
+        <TextView
+            android:id="@+id/balance_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="đ0"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Nút Nạp tiền -->
+        <Button
+            android:id="@+id/nap_tien_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nạp tiền"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_background1"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

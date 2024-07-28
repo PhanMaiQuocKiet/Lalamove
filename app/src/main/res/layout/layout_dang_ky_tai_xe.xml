@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chi tiết tài khoản"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:id="@+id/phone_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/title_text"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_sodienthoai_TaiXe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Số điện thoại"
+            android:inputType="phone" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/phone_number_input"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_matkhau_TaiXe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="Mật khẩu (tối thiểu 6 ký tự)"
+            android:inputType="textPassword" />
+
+        <ImageView
+            android:id="@+id/show_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_show"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Hiển thị mật khẩu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/TenTaiKhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/password_input"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_ten_TaiXe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Tên của bạn"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Phuongtienvanchuyen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/TenTaiKhoan"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <Spinner
+            android:id="@+id/spinner_phuongtien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Biensoxe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/Phuongtienvanchuyen"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_Bienso_vanchuyen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Biển số vận chuyển"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@+id/Biensoxe"
+        android:id="@+id/terms_conditions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bằng cách nhấp vào Đăng ký bên dưới, bạn đã đọc toàn bộ văn bản và đồng ý với Điều khoản và điều kiện sử dụng dịch vụ và Chính sách bảo mật."
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/btn_DangKy_TaiKhoanTaiXe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/terms_conditions"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/orange_fresh"
+        android:text="Đăng ký"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv_DaCoTaiKhoan_TaiXe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã có tài khoản?"
+        android:textColor="@color/orange_fresh"
+        android:layout_below="@id/btn_DangKy_TaiKhoanTaiXe"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

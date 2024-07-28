@@ -4,20 +4,36 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_order"
-        android:layout_centerInParent="true" />
+    <ListView
+        android:id="@+id/lv_DonHang_DaHoanThanh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp" />
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/ln_hienthi_DaHoanThanh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List đơn hàng"
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/img_DonHang_HoanThanh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_order"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_DonHang_HoanThanh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hiện chưa có đơn hàng"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/btn_Dong_GhiChuChoTaiXe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:src="@drawable/baseline_close_24" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ghi chú cho tài xế"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+    <LinearLayout
+        android:id="@+id/phone_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/title"
+        android:layout_margin="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_GhiChuChoTaiXe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:hint="Thêm hướng dẫn giao hàng tại đây"
+            android:padding="15dp"
+            android:inputType="textMultiLine"
+             android:maxLines="5"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_Luu_GhiChuChoTaiXe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange_fresh"
+        android:text="Lưu"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/black" />
+</RelativeLayout>

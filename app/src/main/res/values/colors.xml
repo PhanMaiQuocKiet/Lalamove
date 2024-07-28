@@ -10,7 +10,9 @@
     <color name="gray_street">#928E8E</color>
     <color name="gray_light">#DBD6D6</color>
     <color name="gray_white">#F3F3F3</color>
-
+    <color name="stringee_background_color">#FFFFFF</color>
     <color name="dot_active">#FFFFFF</color> <!-- Màu chấm tròn khi hoạt động -->
     <color name="dot_inactive">#80FFFFFF</color> <!-- Màu chấm tròn khi không hoạt động -->
+
+    <color name="vangnhat">#F2D21E</color>
 </resources>

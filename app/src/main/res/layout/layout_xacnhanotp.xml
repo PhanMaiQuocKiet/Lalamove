@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".View.Login.XacNhanOTPActivity">
+
+    <ImageButton
+        android:id="@+id/imgbtn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FDF6FE"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận tài khoản"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="150dp"/>
+
+    <LinearLayout
+        android:id="@+id/sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:itemCount="6"
+            app:itemHeight="48dp"
+            app:itemRadius="20dp"
+            app:itemSpacing="10dp"
+            app:itemWidth="48dp"
+            app:lineColor="#000000"
+            app:lineWidth="2dp"
+            app:viewType="rectangle"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tin nhắn SMS được gửi tới số điện thoại của bạn. Vui lòng nhập mã PIN được cung cấp."
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_xacnhan"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Xác Nhận"
+        android:backgroundTint="@color/orange_fresh"
+        android:textColor="@color/black"
+        android:layout_below="@id/text"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="40dp"/>
+</LinearLayout>
+

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ln_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_background">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/tv_thu_ListDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="thứ 3,"
+                    android:textColor="@color/gray_street"/>
+                <TextView
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/tv_thang_ngay_ListDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  thg 7 23,"
+                    android:textColor="@color/gray_street"/>
+                <TextView
+                    android:id="@+id/tv_ThoiGianDatHang_ListDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  09:59"
+                    android:textColor="@color/gray_street"/>
+                <TextView
+                    android:layout_marginLeft="120dp"
+                    android:id="@+id/tv_trangthai_Donhang_KhachHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/img_DiemNhan_ListDonHang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dot"/>
+                <TextView
+                    android:id="@+id/tv_DiemDen_ListDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm đến"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/img_DiemGiao_ListDonHang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map"
+                    />
+                <TextView
+                    android:id="@+id/tv_DiemGiao_ListDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Điểm Giao"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_TenLoaiPhuongTien_ListDonHang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xe Máy"/>
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/tv_GiaTien_ListDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="đ 0"
+                    android:padding="5dp"
+                    android:layout_marginRight="5dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

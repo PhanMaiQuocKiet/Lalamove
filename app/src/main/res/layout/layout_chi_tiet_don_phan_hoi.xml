@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thông tin chi tiết\nđơn phản hồi"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- CardView to contain the details -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_margin="20dp"
+        android:padding="16dp"
+
+        android:background="@drawable/vehicle_item_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Mã đơn -->
+            <TextView
+                android:id="@+id/tv_ma_don_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mã đơn :"
+                android:textSize="16sp"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_ma_don"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_ma_don_label"
+                android:layout_alignBaseline="@id/tv_ma_don_label"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp" />
+
+            <!-- Diễn giải -->
+            <TextView
+                android:id="@+id/tv_dien_giai_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diễn giải :"
+                android:textSize="16sp"
+                android:layout_below="@id/tv_ma_don_label"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_dien_giai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_dien_giai_label"
+                android:layout_alignBaseline="@id/tv_dien_giai_label"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp" />
+
+            <!-- Trạng thái đơn -->
+            <TextView
+                android:id="@+id/tv_trang_thai_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái đơn :"
+                android:textSize="16sp"
+                android:layout_below="@id/tv_dien_giai_label"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_trang_thai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_trang_thai_label"
+                android:layout_alignBaseline="@id/tv_trang_thai_label"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp" />
+
+            <!-- Tin nhắn -->
+            <TextView
+                android:id="@+id/tv_tin_nhan_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tin nhắn:"
+                android:textSize="16sp"
+                android:layout_below="@id/tv_trang_thai_label"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_tin_nhan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_tin_nhan_label"
+                android:layout_alignBaseline="@id/tv_tin_nhan_label"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

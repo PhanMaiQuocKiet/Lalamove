@@ -18,7 +18,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.lalamove.R;
-import com.example.lalamove.View.Login.LoginActivity;
+import com.example.lalamove.View.Login.DangNhapActivity;
 
 public class GioiThieu extends AppCompatActivity {
     private ViewPager viewPager;
@@ -113,7 +113,7 @@ public class GioiThieu extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(GioiThieu.this, LoginActivity.class));
+        startActivity(new Intent(GioiThieu.this, DangNhapActivity.class));
         finish();
     }
 

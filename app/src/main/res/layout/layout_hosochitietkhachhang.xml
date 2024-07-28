@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Nút Back -->
+    <ImageButton
+        android:id="@+id/btn_back_hosokh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/btn_back_hosokh"
+        android:padding="10dp"
+        android:text="Hồ sơ chi tiết tài khoản"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/title_text"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_avatar"
+            android:contentDescription="Avatar" />
+    </LinearLayout>
+
+    <!-- Phần nhập tên -->
+    <LinearLayout
+        android:id="@+id/TenTaiKhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avatar"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/Ten"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Tên"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/insert_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Sửa tên"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Phần nhập số điện thoại -->
+    <LinearLayout
+        android:id="@+id/Sodienthoai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TenTaiKhoan"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/sdt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Số điện thoại"
+            android:inputType="phone"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/insert_sdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Sửa số điện thoại"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Phần nhập Gmail -->
+    <LinearLayout
+        android:id="@+id/Gmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Sodienthoai"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/Gmail_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Gmail"
+            android:inputType="textEmailAddress"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/insert_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Sửa Gmail"
+            android:padding="8dp" />
+    </LinearLayout>
+
+</RelativeLayout>

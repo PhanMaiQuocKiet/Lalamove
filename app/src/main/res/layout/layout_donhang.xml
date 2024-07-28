@@ -12,7 +12,7 @@
         android:popupTheme="?attr/actionBarPopupTheme">
 
         <ImageView
-            android:id="@+id/back_button"
+            android:id="@+id/img_QuayLai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_back_24"
@@ -31,7 +31,7 @@
 
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+        android:id="@+id/tab_layout_Donhang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
@@ -41,8 +41,8 @@
         app:tabTextColor="@android:color/black"/>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+        android:id="@+id/view_pager_DonHang"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tab_layout"/>
+        android:layout_below="@id/tab_layout_Donhang"/>
 </RelativeLayout>

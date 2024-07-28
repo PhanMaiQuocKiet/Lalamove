@@ -9,7 +9,7 @@
     <dimen name="button_size_width">100dp</dimen>
     <dimen name="button_size_height">40dp</dimen>
 
-    
+
     <dimen name="lable_size_14">14sp</dimen>
     <dimen name="lable_size_15">15sp</dimen>
     <dimen name="lable_size_16">16sp</dimen>
@@ -59,6 +59,7 @@
     <dimen name="pdb_20">20dp</dimen>
     <dimen name="pdr_20">20dp</dimen>
     <dimen name="pdl_20">20dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>

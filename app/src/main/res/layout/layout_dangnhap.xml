@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="(84+) 792 583 329"
+            android:hint="0792 583 329"
             android:inputType="phone" />
     </LinearLayout>
     <!-- Password Input -->
@@ -48,9 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Password"
-            android:inputType="textPassword" />
-
+            android:hint="Password"/>
         <ImageView
             android:id="@+id/show_password"
             android:layout_width="wrap_content"
@@ -67,11 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/password_input"
         android:layout_marginTop="16dp"
-
         android:backgroundTint="@color/orange_fresh"
         android:text="Đăng nhập"
         android:textColor="@android:color/white" />
-
     <LinearLayout
         android:id="@+id/social_login_options"
         android:layout_width="match_parent"
@@ -81,15 +77,6 @@
         android:layout_below="@id/btn_dangnhap"
         android:layout_marginTop="16dp">
 
-
-
-
-
-        <ImageView
-            android:id="@+id/google_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_google" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/links"
@@ -98,20 +85,28 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_below="@id/social_login_options"
-        android:layout_marginTop="16dp">
-
+        android:layout_marginTop="5dp">
         <TextView
-            android:id="@+id/forgot_password"
+            android:id="@+id/tv_forgot_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quên mật khẩu?"
+            android:text="Quên mật khẩu ?"
             android:textColor="@color/orange_fresh" />
 
+
         <TextView
-            android:id="@+id/sign_up"
+            android:id="@+id/tv_DangNhap_DangKy_TaiXe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bạn chưa có tài khoản?"
+            android:text="Đăng ký làm tài xế ?"
+            android:textColor="@color/orange_fresh"
+            android:layout_marginTop="8dp"
+            />
+        <TextView
+            android:id="@+id/tv_chuacoTK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản ?"
             android:textColor="@color/orange_fresh"
             android:layout_marginTop="8dp" />
     </LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "588465829511",
+    "project_id": "lahamove-6e282",
+    "storage_bucket": "lahamove-6e282.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588465829511:android:9c43ac31b57d8ebefc6a22",
+        "android_client_info": {
+          "package_name": "com.example.lalamove"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMZhgouarDdzdwVa9Sg89YKi_xIxRNDr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
