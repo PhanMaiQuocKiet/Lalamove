@@ -98,6 +98,8 @@
         <activity android:name=".View.Home.TaiXe.TaiXeYeuThichActivity" android:exported="false">
 
         </activity>
+        <activity android:name=".View.Home.KhachHang.ThongTinTK_KhachHang" />
+        <activity android:name=".View.Home.TaiXe.ThongTinTK_TaiXe" />
     </application>
 
 </manifest>

@@ -143,7 +143,7 @@ public class DangKyKhachHangActivity extends AppCompatActivity {
     void AnhXa()
     {
         edt_sodienthoai_khachhang = findViewById(R.id.edt_sodienthoai_khachhang);
-        edt_email_khachhang = findViewById(R.id.edt_email_khachang);
+
         edt_matkhau_khachhang = findViewById(R.id.edt_matkhau_khachhang);
         edt_ten_khachhang= findViewById(R.id.edt_ten_khachhang);
         showPasswordImageView = findViewById(R.id.show_password);

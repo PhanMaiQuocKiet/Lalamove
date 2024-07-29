@@ -59,7 +59,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/Ten"
+            android:id="@+id/edt_Ten_HoSoChiTiet_TaiXe"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -92,7 +92,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/sdt"
+            android:id="@+id/edt_HoSoChiTiet_SDT_TaiXe"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -111,9 +111,10 @@
             android:padding="8dp" />
     </LinearLayout>
 
-    <!-- Phần nhập Chức vụ -->
+
+    <!-- Biển số phương tiện -->
     <LinearLayout
-        android:id="@+id/chucvu"
+        android:id="@+id/bien_sophuongtien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Sodienthoai"
@@ -125,97 +126,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/chucvu_1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Chức vụ"
-            android:inputType="text"
-            android:padding="8dp" />
-
-        <ImageView
-            android:id="@+id/insert_gmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa Chức vụ"
-            android:padding="8dp" />
-    </LinearLayout>
-
-    <!-- Điểm đánh giá -->
-    <LinearLayout
-        android:id="@+id/diem_danhgia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chucvu"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/diemdanhgia"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Điểm đánh giá"
-            android:inputType="numberDecimal"
-            android:padding="8dp" />
-
-    </LinearLayout>
-
-    <!-- Mã phương tiện -->
-    <LinearLayout
-        android:id="@+id/ma_phuongtien"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/diem_danhgia"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/maphuongtien"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Mã phương tiện"
-            android:inputType="text"
-            android:padding="8dp" />
-
-        <ImageView
-            android:id="@+id/insert_maphuongtien"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa Mã phương tiện"
-            android:padding="8dp" />
-    </LinearLayout>
-
-    <!-- Biển số phương tiện -->
-    <LinearLayout
-        android:id="@+id/bien_sophuongtien"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ma_phuongtien"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/biensophuongtien"
+            android:id="@+id/edt_HoSoChiTiet_BienSoXe_TaiXe"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

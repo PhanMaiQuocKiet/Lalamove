@@ -109,37 +109,7 @@
             android:padding="8dp" />
     </LinearLayout>
 
-    <!-- Phần nhập Gmail -->
-    <LinearLayout
-        android:id="@+id/Gmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Sodienthoai"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/Gmail_1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Gmail"
-            android:inputType="textEmailAddress"
-            android:padding="8dp" />
 
-        <ImageView
-            android:id="@+id/insert_gmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa Gmail"
-            android:padding="8dp" />
-    </LinearLayout>
 
 </RelativeLayout>

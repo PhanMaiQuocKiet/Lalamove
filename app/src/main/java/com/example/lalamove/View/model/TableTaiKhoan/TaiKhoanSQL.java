@@ -3,7 +3,6 @@ package com.example.lalamove.View.model.TableTaiKhoan;
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -18,7 +17,7 @@ public class TaiKhoanSQL {
     Connection con;
     ConnectionHelper connectionHelper;
 
-    public void sp_update_mkTaiKhoan(String sodienthoai,String mkmoi, Context context) {
+    public void sp_update_mkTaiKhoan(String sodienthoai, String mkmoi, Context context) {
         try {
             connectionHelper = new ConnectionHelper();
             con = connectionHelper.connectionClass();
@@ -35,14 +34,14 @@ public class TaiKhoanSQL {
                 callableStatement.close();
                 con.close();
             } else {
-                Toast.makeText(context, "Có lỗi xảy ra , thử lại sau", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(context, "Có lỗi xảy ra, thử lại sau", Toast.LENGTH_SHORT).show();
             }
             con.close();
         } catch (Exception e) {
             Log.e(TAG, "sp_update_mkTaiKhoan: " + e.getMessage());
         }
     }
+
     public String getLoaiTaiKhoan(String sodienthoai, Context context) {
         String loaiTaiKhoan = "";
 
@@ -53,7 +52,7 @@ public class TaiKhoanSQL {
                 String sql = "SELECT loaitaikhoan " +
                         "FROM TaiKhoan " +
                         "WHERE sodienthoai = ?";
-               PreparedStatement preparedStatement = con.prepareStatement(sql);
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
                 // Thiết lập giá trị cho tham số của câu truy vấn
                 preparedStatement.setString(1, sodienthoai);
 
@@ -76,4 +75,48 @@ public class TaiKhoanSQL {
         }
         return loaiTaiKhoan;
     }
+
+    public void updateTenTaiKhoan(String sodienthoai, String tenMoi, Context context) {
+        try {
+            connectionHelper = new ConnectionHelper();
+            con = connectionHelper.connectionClass();
+            if (con != null) {
+                String sql = "UPDATE TaiKhoan SET ten = ? WHERE sodienthoai = ?";
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                preparedStatement.setString(1, tenMoi);
+                preparedStatement.setString(2, sodienthoai);
+                preparedStatement.executeUpdate();
+                Toast.makeText(context, "Cập nhật tên thành công", Toast.LENGTH_SHORT).show();
+                preparedStatement.close();
+                con.close();
+            } else {
+                Toast.makeText(context, "Có lỗi xảy ra, thử lại sau", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "updateTenTaiKhoan: " + e.getMessage());
+        }
+    }
+
+    public void updateSdtTaiKhoan(String sodienthoai, String sdtMoi, Context context) {
+        try {
+            connectionHelper = new ConnectionHelper();
+            con = connectionHelper.connectionClass();
+            if (con != null) {
+                String sql = "UPDATE TaiKhoan SET sodienthoai = ? WHERE sodienthoai = ?";
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                preparedStatement.setString(1, sdtMoi);
+                preparedStatement.setString(2, sodienthoai);
+                preparedStatement.executeUpdate();
+                Toast.makeText(context, "Cập nhật số điện thoại thành công", Toast.LENGTH_SHORT).show();
+                preparedStatement.close();
+                con.close();
+            } else {
+                Toast.makeText(context, "Có lỗi xảy ra, thử lại sau", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "updateSdtTaiKhoan: " + e.getMessage());
+        }
+    }
+
+
 }
