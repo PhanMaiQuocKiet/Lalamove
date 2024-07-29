@@ -51,7 +51,8 @@ public class DangNhapActivity extends AppCompatActivity {
                 String matkhau = edt_matkhau.getText().toString();
                 if (!DinhDang.isDinhDangSoDienThoai(soDienThoai)) {
                     edt_sodienthoai_dangnhap.setError("Số điện thoại phải 10 số");
-                } else {
+                }
+                else {
                     long lockTime = sharedPreferences.getLong("lockTime", 0);
                     if (System.currentTimeMillis() < lockTime) {
                        Toast.makeText(DangNhapActivity.this, "Tài khoản bị khóa. Vui lòng thử lại sau." , Toast.LENGTH_SHORT).show();

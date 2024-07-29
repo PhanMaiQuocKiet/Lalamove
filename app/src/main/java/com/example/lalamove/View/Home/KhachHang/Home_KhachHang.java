@@ -69,7 +69,6 @@ public class Home_KhachHang extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-
                 drawerLayout.closeDrawers();
                 int menuID = item.getItemId();
                 if (menuID == R.id.nav_orders) {
@@ -79,7 +78,7 @@ public class Home_KhachHang extends AppCompatActivity {
                 } else if (menuID == R.id.nav_recharge) {
                     return true;
                 } else if (menuID == R.id.nav_favorite_drivers) {
-                    Intent intent = new Intent(Home_KhachHang.this, ThongTinTK_KhachHang.class);
+                    Intent intent = new Intent(Home_KhachHang.this, TaiXeYeuThich.class);
                     startActivity(intent);
                     return true;
                 } else if (menuID == R.id.nav_settings) {
