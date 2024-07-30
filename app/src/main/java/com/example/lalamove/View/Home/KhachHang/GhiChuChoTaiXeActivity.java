@@ -1,6 +1,5 @@
 package com.example.lalamove.View.Home.KhachHang;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -35,8 +34,7 @@ public class GhiChuChoTaiXeActivity extends AppCompatActivity {
                 editor.putString("ghichuchotaixe",ghiChu);
                 editor.apply();
 
-                Intent i = new Intent(GhiChuChoTaiXeActivity.this,BuocTiepTheoActivity.class);
-                startActivity(i);
+               finish();
             }
         });
         btn_Dong_GhiChuChoTaiXe.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +42,7 @@ public class GhiChuChoTaiXeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editor.remove("ghichuchotaixe");
                 editor.apply();
-                Intent i = new Intent(GhiChuChoTaiXeActivity.this,BuocTiepTheoActivity.class);
-                startActivity(i);
+                finish();
             }
         });
 

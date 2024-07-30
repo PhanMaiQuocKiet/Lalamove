@@ -47,7 +47,7 @@
 
     <!-- Phần nhập Tên -->
     <LinearLayout
-        android:id="@+id/TenTaiKhoan"
+        android:id="@+id/tentkTX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/avatar"
@@ -67,23 +67,14 @@
             android:inputType="textPersonName"
             android:padding="8dp" />
 
-        <ImageView
-            android:id="@+id/insert_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa tên"
-            android:padding="8dp" />
     </LinearLayout>
 
     <!-- Phần nhập Số điện thoại -->
     <LinearLayout
-        android:id="@+id/Sodienthoai"
+        android:id="@+id/Sodienthoai_tx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/TenTaiKhoan"
+        android:layout_below="@id/tentkTX"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp"
@@ -96,28 +87,69 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:enabled="false"
             android:hint="Số điện thoại"
             android:inputType="phone"
             android:padding="8dp" />
 
-        <ImageView
-            android:id="@+id/insert_sdt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa số điện thoại"
-            android:padding="8dp" />
     </LinearLayout>
 
+    <!-- Điểm đánh giá -->
+    <LinearLayout
+        android:id="@+id/diem_danhgia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Sodienthoai_tx"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/diemdanhgia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Điểm đánh giá"
+            android:inputType="numberDecimal"
+            android:enabled="false"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Loại phương tiện -->
+    <LinearLayout
+        android:id="@+id/ma_phuongtien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/diem_danhgia"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/loaiphuongtien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:hint="Loại phương tiện"
+            android:inputType="text"
+            android:padding="8dp" />
+
+    </LinearLayout>
 
     <!-- Biển số phương tiện -->
     <LinearLayout
         android:id="@+id/bien_sophuongtien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Sodienthoai"
+        android:layout_below="@id/ma_phuongtien"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp"
@@ -130,19 +162,89 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:enabled="false"
             android:hint="Biển số phương tiện"
             android:inputType="text"
             android:padding="8dp" />
+    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/insert_biensophuongtien"
+    <!-- Mật khẩu cũ -->
+    <LinearLayout
+        android:id="@+id/mk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bien_sophuongtien"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/mkcu_hscttx"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Mật khẩu cũ"
+            android:inputType="textPassword"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Mật khẩu mới -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mk"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/mkmoi_hscttx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa Biển số phương tiện"
+            android:layout_weight="1"
+            android:hint="Mật khẩu mới"
+            android:inputType="textPassword"
             android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Các nút hành động -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_edit_tttkTX"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sửa thông tin" />
+
+        <Button
+            android:id="@+id/btn_doimk_tttkTX"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đổi mật khẩu" />
+
     </LinearLayout>
 
 </RelativeLayout>

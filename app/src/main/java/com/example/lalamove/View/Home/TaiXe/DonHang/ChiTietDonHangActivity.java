@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +23,11 @@ import com.example.lalamove.View.model.TableChiTietDonGiao.ChiTiet_QuerySql;
 import com.example.lalamove.View.model.TableDonDatGiaoHang.QuerySql_DonDatGiaoHang;
 import com.example.lalamove.View.model.TableTaiKhoan.TaiKhoanSQL;
 import com.example.lalamove.View.model.TableTaiKhoanTaiXe.TaiXe_QuerySql;
-import com.example.lalamove.View.model.TableTaiXeYeuThich.QuerySql;
+import com.example.lalamove.View.model.TableTaiXeYeuThich.TXYT_QuerySql;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
-import android.widget.RatingBar;
 
 public class ChiTietDonHangActivity extends AppCompatActivity {
 
@@ -104,9 +104,9 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
         builder.setPositiveButton("Xác nhận", (dialog, which) -> {
             int rating = (int) ratingBar.getRating();
             // Xử lý đánh giá ở đây
+            TXYT_QuerySql TXYTQuerySql = new TXYT_QuerySql();
+            TXYTQuerySql.sp_insert_DanhGiaTaiXe(soDienThoaiKhachHang,sodienthoaitaixe,rating,context);
 
-            QuerySql querySql = new QuerySql();
-            querySql.sp_insert_DanhGiaTaiXe(soDienThoaiKhachHang,sodienthoaitaixe,rating,context);
         });
         builder.setNegativeButton("Quay lại", (dialog, which) -> dialog.cancel());
 
@@ -188,6 +188,7 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
         tv_ChiTietDonHang_SoSaoDanhGia.setText(String.format(Locale.getDefault(), "%d.0", diemDanhGia));
         tv_ChiTietDonHang_TenPhuongTien.setText(tenPhuongtien);
         tv_ChiTietDonHang_DiemNhan.setText(noiNhan);
+
         tv_ChiTietDonHang_DiemGiao.setText(noiGiao);
         tv_ChiTietDonHang_tongtien.setText(String.format(Locale.getDefault(), "%,d đ", giaTien));
     }

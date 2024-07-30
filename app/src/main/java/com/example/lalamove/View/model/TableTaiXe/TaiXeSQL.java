@@ -12,10 +12,13 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class TaiXeSQL {
     Connection con;
     ConnectionHelper connectionHelper ;
+    String bienso,maphuongtien,diemdanhgia,tenphuongtien;
+
 
     public void sp_insert_TaiKhoanTaiXe(String sodienthoai, String ten, String matkhau, String loaitaikhoan, String hinhdaidien, String sodienthoaitaixe , String bienso , String maphuongtien , String mavidientu , Context context){
        try{
@@ -90,6 +93,73 @@ public class TaiXeSQL {
         }
         return flag;
     }
+    public String sp_select_tenphuongtien (String mapt, Context context) {
+        try {
+            connectionHelper = new ConnectionHelper();
+            con = connectionHelper.connectionClass();
+            if (con != null) {
+                String sql = "SELECT tenphuongtien " +
+                        "FROM LoaiPhuongTien " +
+                        "WHERE maphuongtien = ?";
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                // Thiết lập giá trị cho tham số của câu truy vấn
+                preparedStatement.setString(1, mapt);
 
+                ResultSet rs = preparedStatement.executeQuery(); // Không cần truyền tham số vào phương thức
 
+                // Xử lý kết quả trả về từ ResultSet
+                if (rs.next()) {
+                    tenphuongtien = rs.getString("tenphuongtien");
+                } else {
+                    Toast.makeText(context, "Lỗi không truy xuất được dữ liệu", Toast.LENGTH_SHORT).show();
+                }
+                preparedStatement.close();
+                rs.close();
+                con.close();
+            } else {
+                Toast.makeText(context, "Lỗi không truy xuất được dữ liệu", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e("TAG", "Lỗi khi kiểm tra tài khoản: " + e.getMessage());
+        }
+        return tenphuongtien;
+    }
+    public ArrayList<String> sp_select_taikhoan_taixe (String sdt, Context context)
+    {
+        ArrayList<String> kq = new ArrayList<>();
+        try {
+            connectionHelper = new ConnectionHelper();
+            con = connectionHelper.connectionClass();
+            if (con != null) {
+                String sql = "SELECT bienso,maphuongtien,diemdanhgia " +
+                        "FROM TaiKhoanTaiXe " +
+                        "WHERE sodienthoaitaixe = ?";
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                // Thiết lập giá trị cho tham số của câu truy vấn
+                preparedStatement.setString(1, sdt);
+
+                ResultSet rs = preparedStatement.executeQuery(); // Không cần truyền tham số vào phương thức
+
+                // Xử lý kết quả trả về từ ResultSet
+                if (rs.next()) {
+                    bienso = rs.getString("bienso");
+                    maphuongtien=rs.getString("maphuongtien");
+                    diemdanhgia=rs.getString("diemdanhgia");
+                    kq.add(bienso);
+                    kq.add(diemdanhgia);
+                    kq.add(sp_select_tenphuongtien(maphuongtien,context));
+                } else {
+                    Toast.makeText(context, "Lỗi không truy xuất được dữ liệu", Toast.LENGTH_SHORT).show();
+                }
+                preparedStatement.close();
+                rs.close();
+                con.close();
+            } else {
+                Toast.makeText(context, "Lỗi không truy xuất được dữ liệu", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e("TAG", "Lỗi khi kiểm tra tài khoản: " + e.getMessage());
+        }
+        return kq;
+    }
 }

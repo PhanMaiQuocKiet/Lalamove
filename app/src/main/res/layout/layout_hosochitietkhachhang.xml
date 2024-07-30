@@ -45,7 +45,7 @@
 
     <!-- Phần nhập tên -->
     <LinearLayout
-        android:id="@+id/TenTaiKhoan"
+        android:id="@+id/tentkTX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/avatar"
@@ -65,23 +65,14 @@
             android:inputType="textPersonName"
             android:padding="8dp" />
 
-        <ImageView
-            android:id="@+id/insert_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa tên"
-            android:padding="8dp" />
     </LinearLayout>
 
     <!-- Phần nhập số điện thoại -->
     <LinearLayout
-        android:id="@+id/Sodienthoai"
+        android:id="@+id/Sodienthoai_tx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/TenTaiKhoan"
+        android:layout_below="@id/tentkTX"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp"
@@ -96,20 +87,85 @@
             android:layout_weight="1"
             android:hint="Số điện thoại"
             android:inputType="phone"
+            android:enabled="false"
             android:padding="8dp" />
 
-        <ImageView
-            android:id="@+id/insert_sdt"
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/mk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Sodienthoai_tx"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+        android:id="@+id/mkcu_hsctkh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="mat khau cu"
+        android:inputType="textPassword"
+        android:padding="8dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mk"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/mkmoi_hsctkh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_signup"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Sửa số điện thoại"
+            android:layout_weight="1"
+            android:hint="mat khau moi"
+            android:inputType="textPassword"
             android:padding="8dp" />
+
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/linearLayout"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:weightSum="2"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/btn_edit_tttkKH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sửa thông tin">
 
+    </Button>
 
+    <Button
+        android:id="@+id/btn_doimk_tttkKH"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đổi mật khẩu">
+
+    </Button>
+</LinearLayout>
 
 
 </RelativeLayout>

@@ -43,8 +43,9 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_log_out" /> <!-- Replace with your icon -->
 
             <TextView
@@ -67,8 +68,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_settings" /> <!-- Replace with your icon -->
 
             <TextView
@@ -91,8 +92,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_help_center" /> <!-- Replace with your icon -->
 
             <TextView
@@ -115,8 +116,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_friend" /> <!-- Replace with your icon -->
 
             <TextView
@@ -128,16 +129,4 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
     </GridLayout>
-    <TextView
-        android:id="@+id/tv_TrangChuQuanLyNhanSu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:text="Đăng xuất"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp" />
 </RelativeLayout>

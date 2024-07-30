@@ -24,16 +24,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.lalamove.DTO.KhungGioCam;
 import com.example.lalamove.ListLoaiXe.PhuongTien;
-import com.example.lalamove.View.Home.KhachHang.DonHang.DonHangActivity;
-import com.example.lalamove.View.model.TableLoaiPhuongTien.QuerySql;
-
 import com.example.lalamove.ListLoaiXe.VehicleAdapter;
 import com.example.lalamove.R;
+import com.example.lalamove.View.Home.KhachHang.DonHang.DonHangActivity;
 import com.example.lalamove.View.Login.DangNhapActivity;
+import com.example.lalamove.View.model.TableKhungGioCam.KhungGioCam_QuerySql;
 import com.example.lalamove.View.model.TableLoaiPhuongTien.QuerySql;
+import com.example.lalamove.View.model.TableTaiKhoan.TaiKhoanSQL;
 import com.example.lalamove.View.model.TinhKhoangCach;
 import com.google.android.material.navigation.NavigationView;
-import com.example.lalamove.View.model.TableKhungGioCam.KhungGioCam_QuerySql;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,6 @@ public class Home_KhachHang extends AppCompatActivity {
 
         // AnhXa
         AnhXa();
-
         //Khai báo sharedPreferences
         sharedPreferences = Home_KhachHang.this.getSharedPreferences("LuongDatHang", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -70,7 +69,6 @@ public class Home_KhachHang extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-
                 drawerLayout.closeDrawers();
                 int menuID = item.getItemId();
                 if (menuID == R.id.nav_orders) {
@@ -80,8 +78,12 @@ public class Home_KhachHang extends AppCompatActivity {
                 } else if (menuID == R.id.nav_recharge) {
                     return true;
                 } else if (menuID == R.id.nav_favorite_drivers) {
+                    Intent intent = new Intent(Home_KhachHang.this, TaiXeYeuThich.class);
+                    startActivity(intent);
                     return true;
                 } else if (menuID == R.id.nav_settings) {
+                    Intent intent = new Intent(Home_KhachHang.this, ThongTinTK_KhachHang.class);
+                    startActivity(intent);
                     return true;
                 } else if (menuID == R.id.nav_help_center) {
                     ChuyenTrang(Home_KhachHang.this, TrungTamTroGiupActivity.class);
@@ -119,6 +121,8 @@ public class Home_KhachHang extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(GravityCompat.START);
+                Capnhatten();
+
             }
         });
 
@@ -186,7 +190,16 @@ public class Home_KhachHang extends AppCompatActivity {
         KhungGioCam_QuerySql khungGioCamQuerySql = new KhungGioCam_QuerySql(this);
         return khungGioCamQuerySql.getKhungGioCamList();
     }
-
+    void Capnhatten()
+    {
+        TextView tv = findViewById(R.id.tv_ten_khachhang);
+        TaiKhoanSQL tksql = new TaiKhoanSQL();
+        SharedPreferences sf = getSharedPreferences("ThongTinDangNhap",MODE_PRIVATE);
+        String sdt = sf.getString("sodienthoai","khong lay duoc ten");
+        ArrayList<String> kq = tksql.sp_select_taikhoan(sdt,Home_KhachHang.this);
+        String ten = kq.get(0);
+        tv.setText(ten);
+    }
     @SuppressLint("DefaultLocale")
     private void checkAndShowPayment() {
         String noiGiao = edt_NoiGiao.getText().toString().trim();

@@ -10,12 +10,11 @@ constraintlayout = "2.1.4"
 com-google-android-libraries-mapsplatform-secrets-gradle-plugin = "2.0.1"
 play-services-maps = "18.1.0"
 places = "3.5.0"
+gridlayout = "1.0.0"
 navigationFragment = "2.7.7"
 navigationUi = "2.7.7"
 firebaseCommon = "21.0.0"
 firebaseAuth = "23.0.0"
-
-
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -31,6 +30,7 @@ navigation-fragment = { group = "androidx.navigation", name = "navigation-fragme
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 firebase-common = { group = "com.google.firebase", name = "firebase-common", version.ref = "firebaseCommon" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" }
 
 
 [plugins]

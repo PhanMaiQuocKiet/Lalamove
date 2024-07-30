@@ -13,6 +13,12 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
+    <string-array name="roles_array">
+        <item>All</item>
+        <item>KhachHang</item>
+        <item>TaiXe</item>
+        <item>NhanVienCongTy</item>
+    </string-array>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

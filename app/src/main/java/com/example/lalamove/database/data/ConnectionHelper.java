@@ -12,9 +12,7 @@ public class ConnectionHelper {
     String username, password, ip, port, database;
 
     public Connection connectionClass() {
-
-
-        ip = "192.168.1.4";
+        ip = "192.168.1.2";
         database = "Lalamove";
         username = "sa";
         password = "123456";

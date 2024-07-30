@@ -10,7 +10,6 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -76,16 +75,11 @@ public class DangKyKhachHangActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  soDienThoai = edt_sodienthoai_khachhang.getText().toString();
-                 email = edt_email_khachhang.getText().toString();
                  matKhau = edt_matkhau_khachhang.getText().toString();
                  ten = edt_ten_khachhang.getText().toString();
                 if(!DinhDang.isDinhDangSoDienThoai(soDienThoai)){
                     edt_sodienthoai_khachhang.setError("Số điện thoại phải đủ 10 số");
                 }
-                else if(!DinhDang.isDinhDangEmail(email)){
-                    edt_email_khachhang.setError("email phải đúng đinh dạng abc@...com");
-                }
-
                 else if(!DinhDang.isDinhDangMatKhau(matKhau)) {
                     edt_matkhau_khachhang.setError("Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt");
                 }
@@ -143,7 +137,6 @@ public class DangKyKhachHangActivity extends AppCompatActivity {
     void AnhXa()
     {
         edt_sodienthoai_khachhang = findViewById(R.id.edt_sodienthoai_khachhang);
-
         edt_matkhau_khachhang = findViewById(R.id.edt_matkhau_khachhang);
         edt_ten_khachhang= findViewById(R.id.edt_ten_khachhang);
         showPasswordImageView = findViewById(R.id.show_password);
