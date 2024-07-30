@@ -18,12 +18,14 @@ import androidx.fragment.app.Fragment;
 import com.example.lalamove.DTO.DonHang;
 import com.example.lalamove.R;
 import com.example.lalamove.View.model.TableDonDatGiaoHang.QuerySql_DonDatGiaoHang;
+import com.example.lalamove.View.model.TableTaiKhoanTaiXe.TaiXe_QuerySql;
 
 import java.util.List;
 
 public class FragmentDonHangHoanThanh extends Fragment implements DonHangDangTaiAdapter.onXemChiTietClickListener{
     private ListView lv_DonHang_HoanThanh;
     private LinearLayout ln_hienthi_HoanThanh;
+    private SharedPreferences sharedPreferences;
     int size = 0;
     @Nullable
     @Override
@@ -31,7 +33,7 @@ public class FragmentDonHangHoanThanh extends Fragment implements DonHangDangTai
        View v =inflater.inflate(R.layout.fragment_da_hoan_thanh, container, false);
         //Anh Xa
         // Lấy dữ liệu từ SharedPreferences
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("ThongTinDangNhap", Context.MODE_PRIVATE);
+         sharedPreferences = requireActivity().getSharedPreferences("ThongTinDangNhap", Context.MODE_PRIVATE);
         String soDienThoai = sharedPreferences.getString("sodienthoai", "");
         AnhXa(v,soDienThoai);
        return  v;
@@ -65,6 +67,17 @@ public class FragmentDonHangHoanThanh extends Fragment implements DonHangDangTai
     @Override
     public void onXemChiTietClick(DonHang donHang) {
 
+    }
+    private void reloadData() {
+        String sodienthoai = sharedPreferences.getString("sodienthoai", "");
+
+        QuerySql_DonDatGiaoHang querySql = new QuerySql_DonDatGiaoHang();
+        querySql.getDataAllHoanThanh(requireContext(), lv_DonHang_HoanThanh, this::setAdapter, sodienthoai,"Hoàn thành");
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        reloadData();
     }
 
 }

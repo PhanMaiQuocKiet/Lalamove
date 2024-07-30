@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <meta-data
         android:name="firebase_performance_logcat_enabled"
         android:value="true" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,9 +20,12 @@
         android:theme="@style/Theme.Lalamove"
         tools:targetApi="31" >
         <activity
-            android:name=".View.Login.XacNhanOTPActivity"
+            android:name=".View.Home.KhachHang.TaiXeYeuThich"
             android:exported="false"
-           />
+            android:theme="@style/Theme.Lalamove" />
+        <activity
+            android:name=".View.Login.XacNhanOTPActivity"
+            android:exported="false" />
         <activity
             android:name=".View.BatDau.GioiThieu"
             android:exported="false" >
@@ -27,32 +33,36 @@
         <activity
             android:name=".View.Login.DangNhapActivity"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
         </activity>
 
         <activity android:name=".View.Home.TaiXe.DonHang.DonHangActivity" android:exported="false">
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
-        <activity android:name=".View.Home.KhachHang.DangKyKhachHangActivity">
-
-
+        <activity
+            android:name=".View.Home.TaiXe.DonHang.DonHangActivity"
+            android:exported="false" >
         </activity>
-        <activity android:name=".View.Home.KhachHang.Home_KhachHang" android:exported="true">
-
+        <activity android:name=".View.Home.KhachHang.DangKyKhachHangActivity" >
         </activity>
-        <activity android:name=".View.Home.KhachHang.BuocTiepTheoActivity" android:exported="false">
-
+        <activity
+            android:name=".View.Home.KhachHang.Home_KhachHang"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name=".View.Home.KhachHang.BuocTiepTheoActivity"
+            android:exported="false" >
         </activity>
         <activity android:name=".View.Home.TaiXe.DangKyTaiXeActivity" >
-         </activity>
+        </activity>
         <activity android:name=".View.Login.QuenmkActivity" >
         </activity>
-
         <activity
             android:name=".View.Home.NhanVienCongTy.Home_QuanLy_Activity"
             android:exported="true" >
-
         </activity>
         <activity
             android:name=".View.Home.TaiXe.TrangChuTaiXeActivity"
@@ -70,30 +80,43 @@
             android:name=".View.Home.KhachHang.DonHang.DonHangActivity"
             android:exported="false" >
         </activity>
-
-        <activity android:name=".View.Home.KhachHang.TrungTamTroGiupActivity" android:exported="false">
-
+        <activity
+            android:name=".View.Home.KhachHang.TrungTamTroGiupActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".View.Home.NhanVienCongTy.XuLiDonPhanHoi.XuLiDonPhanHoiActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".View.Home.NhanVienCongTy.XuLiDonPhanHoi.ChiTietXuLiDonActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".View.Home.NhanVienCongTy.TrangChuNhanVienActivity"
+            android:exported="false" >
         </activity>
 
-        <activity android:name=".View.Home.NhanVienCongTy.XuLiDonPhanHoi.XuLiDonPhanHoiActivity" android:exported="false">
+        <activity
+            android:name=".View.Home.NhanVienCongTy.TrangChuQuanLiNhanSuActivity"
+            android:exported="true" >
 
-
-        </activity>
-        <activity android:name=".View.Home.NhanVienCongTy.XuLiDonPhanHoi.ChiTietXuLiDonActivity" android:exported="false">
-
-        </activity>
-        <activity android:name=".View.Home.NhanVienCongTy.TrangChuNhanVienActivity" android:exported="false">
-
-        </activity>
         <activity android:name=".View.Home.NhanVienCongTy.TrangChuQuanLiNhanSuActivity"
             android:exported="true">
-        </activity>
-        <activity android:name=".View.Home.TaiXe.DonHang.ChiTietDonHangActivity" android:exported="false">
 
         </activity>
-        <activity android:name=".View.Home.TaiXe.TaiXeYeuThichActivity" android:exported="false">
-
+        <activity
+            android:name=".View.Home.TaiXe.DonHang.ChiTietDonHangActivity"
+            android:exported="false" >
         </activity>
+        <activity
+            android:name=".View.Home.TaiXe.TaiXeYeuThichActivity"
+            android:exported="false" >
+        </activity>
+
+        <activity android:name=".View.Home.NhanVienCongTy.QuanLyTaiKhoan.QuanLiTaiKhoanActivity" />
+        <activity android:name=".View.Home.KhachHang.ThongTinTK_KhachHang" />
+
         <activity android:name=".View.Home.KhachHang.ThongTinTK_KhachHang"
             android:exported="true" >
             <intent-filter>-->
@@ -101,6 +124,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>-->
         </activity>
+
         <activity android:name=".View.Home.TaiXe.ThongTinTK_TaiXe" />
 
     </application>

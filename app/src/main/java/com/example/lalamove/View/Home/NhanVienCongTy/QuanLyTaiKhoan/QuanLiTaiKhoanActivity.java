@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class QuanLiTaiKhoanActivity extends AppCompatActivity {
     private EditText etSearch;
     private Spinner spinnerRole;
     private TextView tvNoData; // Add this line
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class QuanLiTaiKhoanActivity extends AppCompatActivity {
 
         taiKhoanDAO = new TaiKhoanDAO(this);
         List<QuanLiTatCaTaiKhoan> taiKhoanList = taiKhoanDAO.getAllTaiKhoan();
-
+        backButton = findViewById(R.id.backButton);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new TaiKhoanAdapter(taiKhoanList, taiKhoanDAO);
@@ -70,6 +72,12 @@ public class QuanLiTaiKhoanActivity extends AppCompatActivity {
         });
 
         tvNoData = findViewById(R.id.tv_no_data); // Add this line
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void filterAccounts() {

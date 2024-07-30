@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.lalamove.DTO.DonHang;
 import com.example.lalamove.R;
 import com.example.lalamove.View.model.TableDonDatGiaoHang.QuerySql_DonDatGiaoHang;
+import com.example.lalamove.View.model.TableTaiKhoanTaiXe.TaiXe_QuerySql;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class FragmentDonHangDangTai extends Fragment implements DonHangDangTaiAd
     private String trangthai1 = "Chờ nhận hàng";
     private String trangthai2 = "Đang giao";
     private LinearLayout ln_hienthi_DangTai;
+    private SharedPreferences sharedPreferences;
     int size = 0;
 
     @Nullable
@@ -31,7 +33,7 @@ public class FragmentDonHangDangTai extends Fragment implements DonHangDangTaiAd
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dang_tai, container, false);
         //Lấy dữ liệu từ share
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("ThongTinDangNhap", Context.MODE_PRIVATE);
+         sharedPreferences = requireActivity().getSharedPreferences("ThongTinDangNhap", Context.MODE_PRIVATE);
         String soDienThoai = sharedPreferences.getString("sodienthoai","");
 
         //Anh Xa
@@ -70,6 +72,18 @@ public class FragmentDonHangDangTai extends Fragment implements DonHangDangTaiAd
     @Override
     public void onXemChiTietClick(DonHang donHang) {
 
+    }
+    private void reloadData() {
+        String sodienthoai = sharedPreferences.getString("sodienthoai", "");
+
+
+        QuerySql_DonDatGiaoHang querySql = new QuerySql_DonDatGiaoHang();
+        querySql.getDataAll2(requireContext(), lv_DonHang_DangTai, this::setAdapter, sodienthoai,trangthai1,trangthai2);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        reloadData();
     }
 
 }

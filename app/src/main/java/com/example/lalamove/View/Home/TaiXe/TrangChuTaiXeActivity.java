@@ -14,7 +14,7 @@ import com.example.lalamove.View.Login.DangNhapActivity;
 
 public class TrangChuTaiXeActivity extends AppCompatActivity {
     private TextView tv_TaiXe_DangXuat;
-    ImageView img_TrangChuTaiXe_DonHang;
+    ImageView img_TrangChuTaiXe_DonHang,tttk_tx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -39,6 +39,10 @@ public class TrangChuTaiXeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        tttk_tx.setOnClickListener(c->{
+            Intent intent = new Intent(TrangChuTaiXeActivity.this, ThongTinTK_TaiXe.class);
+            startActivity(intent);
+        });
 
 
 
@@ -48,6 +52,7 @@ public class TrangChuTaiXeActivity extends AppCompatActivity {
     void AnhXa(){
         img_TrangChuTaiXe_DonHang = findViewById(R.id.img_TrangChuTaiXe_DonHang);
         tv_TaiXe_DangXuat= findViewById(R.id.tv_TaiXe_DangXuat);
+        tttk_tx=findViewById(R.id.tttk_taixe);
     }
 
 

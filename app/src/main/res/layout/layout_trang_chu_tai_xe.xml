@@ -43,8 +43,8 @@
 
             <ImageView
                 android:id="@+id/img_TrangChuTaiXe_DonHang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_order" />
 
             <TextView
@@ -66,8 +66,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_recharge" />
 
             <TextView
@@ -90,8 +90,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_card_wallet" /> <!-- Replace with your icon -->
 
             <TextView
@@ -113,8 +113,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_help_center" /> <!-- Replace with your icon -->
 
             <TextView
@@ -136,8 +136,9 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/tttk_taixe"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_user" /> <!-- Replace with your icon -->
 
             <TextView
@@ -157,19 +158,6 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_box" /> <!-- Replace with your icon -->
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nhận đơn hàng"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                android:layout_marginTop="8dp" />
         </LinearLayout>
     </GridLayout>
     <TextView

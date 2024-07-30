@@ -23,7 +23,7 @@ import com.example.lalamove.View.model.TableChiTietDonGiao.ChiTiet_QuerySql;
 import com.example.lalamove.View.model.TableDonDatGiaoHang.QuerySql_DonDatGiaoHang;
 import com.example.lalamove.View.model.TableTaiKhoan.TaiKhoanSQL;
 import com.example.lalamove.View.model.TableTaiKhoanTaiXe.TaiXe_QuerySql;
-import com.example.lalamove.View.model.TableTaiXeYeuThich.QuerySql;
+import com.example.lalamove.View.model.TableTaiXeYeuThich.TXYT_QuerySql;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -104,8 +104,9 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
         builder.setPositiveButton("Xác nhận", (dialog, which) -> {
             int rating = (int) ratingBar.getRating();
             // Xử lý đánh giá ở đây
-            QuerySql querySql = new QuerySql();
-            querySql.sp_insert_DanhGiaTaiXe(soDienThoaiKhachHang,sodienthoaitaixe,rating,context);
+            TXYT_QuerySql TXYTQuerySql = new TXYT_QuerySql();
+            TXYTQuerySql.sp_insert_DanhGiaTaiXe(soDienThoaiKhachHang,sodienthoaitaixe,rating,context);
+
         });
         builder.setNegativeButton("Quay lại", (dialog, which) -> dialog.cancel());
 
@@ -121,6 +122,7 @@ public class ChiTietDonHangActivity extends AppCompatActivity {
         } else if (trangthai.equals("Đang giaokh") || trangthai.equals("Chờ nhận hàngkh")) {
             btn_DatLai_chitietdonhang_taixe.setVisibility(View.GONE);
             btn_hoanthanh_chitietdonhang_taixe.setVisibility(View.GONE);
+            tv_ChiTietDonHang_DanhGiaTaiXe.setVisibility(View.GONE);
             btn_huy_chitietdonhang_taixe.setVisibility(View.VISIBLE);
         } else if(trangthai.equals("Hoàn thànhtx") || trangthai.equals("Hủytx")){
             btn_DatLai_chitietdonhang_taixe.setVisibility(View.VISIBLE);

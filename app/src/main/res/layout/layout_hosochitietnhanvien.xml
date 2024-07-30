@@ -47,7 +47,7 @@
 
     <!-- Phần nhập Tên -->
     <LinearLayout
-        android:id="@+id/TenTaiKhoan"
+        android:id="@+id/tentkTX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/avatar"
@@ -80,10 +80,10 @@
 
     <!-- Phần nhập Số điện thoại -->
     <LinearLayout
-        android:id="@+id/Sodienthoai"
+        android:id="@+id/Sodienthoai_tx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/TenTaiKhoan"
+        android:layout_below="@id/tentkTX"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp"
@@ -116,7 +116,7 @@
         android:id="@+id/chucvu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Sodienthoai"
+        android:layout_below="@id/Sodienthoai_tx"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:padding="8dp"

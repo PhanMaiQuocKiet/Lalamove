@@ -14,15 +14,11 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lalamove.View.Home.KhachHang.DonHang.DonHangActivity;
-import com.example.lalamove.View.model.TableDonDatGiaoHang.QuerySql_DonDatGiaoHang;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lalamove.R;
 import com.example.lalamove.View.model.TableDonDatGiaoHang.QuerySql_DonDatGiaoHang;
-import com.example.lalamove.View.model.TableTaiXeYeuThich.QuerySql;
+import com.example.lalamove.View.model.TableTaiXeYeuThich.TXYT_QuerySql;
 
 
 public class BuocTiepTheoActivity extends AppCompatActivity {
@@ -88,8 +84,8 @@ public class BuocTiepTheoActivity extends AppCompatActivity {
         favorite_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                QuerySql querySql = new QuerySql();
-                if(!querySql.isTaiXeYeuThich(soDienThoaiKhachHang,BuocTiepTheoActivity.this)){
+                TXYT_QuerySql TXYTQuerySql = new TXYT_QuerySql();
+                if(!TXYTQuerySql.isTaiXeYeuThich(soDienThoaiKhachHang,BuocTiepTheoActivity.this)){
                     Toast.makeText(BuocTiepTheoActivity.this,"Bạn chưa có tài xế yêu thích nào ",Toast.LENGTH_SHORT).show();
                     favorite_switch.setChecked(false);
                 }

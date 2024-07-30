@@ -12,10 +12,12 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class TaiKhoanSQL {
     Connection con;
     ConnectionHelper connectionHelper;
+    String ten,sodienthoai,mk;
 
     public void sp_update_mkTaiKhoan(String sodienthoai, String mkmoi, Context context) {
         try {
@@ -75,6 +77,42 @@ public class TaiKhoanSQL {
         }
         return loaiTaiKhoan;
     }
+
+    public ArrayList<String> sp_select_taikhoan (String sdt, Context context)
+    {
+            ArrayList<String> kq = new ArrayList<>();
+        try {
+                connectionHelper = new ConnectionHelper();
+                con = connectionHelper.connectionClass();
+                if (con != null) {
+                    String sql = "SELECT sodienthoai,ten,matkhau " +
+                            "FROM TaiKhoan " +
+                            "WHERE sodienthoai = ?";
+                    PreparedStatement preparedStatement = con.prepareStatement(sql);
+                    // Thiết lập giá trị cho tham số của câu truy vấn
+                    preparedStatement.setString(1, sdt);
+
+                    ResultSet rs = preparedStatement.executeQuery(); // Không cần truyền tham số vào phương thức
+
+                    // Xử lý kết quả trả về từ ResultSet
+                    if (rs.next()) {
+                        ten = rs.getString("ten");
+                        sdt=rs.getString("sodienthoai");
+                        mk=rs.getString("matkhau");
+                        kq.add(ten);
+                        kq.add(sdt);
+                        kq.add(mk);
+                    } else {
+                        Toast.makeText(context, "Lỗi không truy xuất được dữ liệu", Toast.LENGTH_SHORT).show();
+                    }
+                preparedStatement.close();
+                rs.close();
+                con.close();
+            } else {
+                Toast.makeText(context, "Lỗi không truy xuất được dữ liệu", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e("TAG", "Lỗi khi kiểm tra tài khoản: " + e.getMessage());
 
     // Cập nhật tên tài khoản
     public void updateTenTaiKhoan(String phone, String newTen, Context context) {
@@ -151,17 +189,33 @@ public class TaiKhoanSQL {
             } catch (Exception e) {
                 Log.e("TaiKhoanSQL", "Lỗi khi đóng tài nguyên: " + e.getMessage());
             }
+
         }
+        return kq;
     }
+
+    public void updatetttk(String sodienthoai, String tenMoi, Context context) {
+
 
     // Cập nhật Gmail
     public void updateGmailTaiKhoan(String phone, String newGmail, Context context) {
         PreparedStatement preparedStatement = null;
+
         try {
             connectionHelper = new ConnectionHelper();
             con = connectionHelper.connectionClass();
 
             if (con != null) {
+
+                String sql = "UPDATE TaiKhoan SET ten = ?  WHERE sodienthoai = ?";
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                preparedStatement.setString(1, tenMoi);
+                preparedStatement.setString(2, sodienthoai);
+                preparedStatement.executeUpdate();
+                Toast.makeText(context, "Cập nhật tên thành công", Toast.LENGTH_SHORT).show();
+                preparedStatement.close();
+                con.close();
+
                 String sql = "UPDATE TaiKhoan SET gmail = ? WHERE sodienthoai = ?";
                 preparedStatement = con.prepareStatement(sql);
                 preparedStatement.setString(1, newGmail);
@@ -173,10 +227,14 @@ public class TaiKhoanSQL {
                 } else {
                     Toast.makeText(context, "Không tìm thấy tài khoản để cập nhật", Toast.LENGTH_SHORT).show();
                 }
+
             } else {
                 Toast.makeText(context, "Không thể kết nối đến cơ sở dữ liệu", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
+
+            Log.e(TAG, "updateTenTaiKhoan: " + e.getMessage());
+
             Log.e("TaiKhoanSQL", "Lỗi khi cập nhật Gmail: " + e.getMessage());
             Toast.makeText(context, "Có lỗi xảy ra khi cập nhật Gmail", Toast.LENGTH_SHORT).show();
         } finally {
@@ -190,6 +248,8 @@ public class TaiKhoanSQL {
             } catch (Exception e) {
                 Log.e("TaiKhoanSQL", "Lỗi khi đóng tài nguyên: " + e.getMessage());
             }
+
         }
     }
+
 }
