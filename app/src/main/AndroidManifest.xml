@@ -35,6 +35,9 @@
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+        </activity>
+
+        <activity android:name=".View.Home.TaiXe.DonHang.DonHangActivity" android:exported="false">
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -93,9 +96,14 @@
             android:name=".View.Home.NhanVienCongTy.TrangChuNhanVienActivity"
             android:exported="false" >
         </activity>
+
         <activity
             android:name=".View.Home.NhanVienCongTy.TrangChuQuanLiNhanSuActivity"
             android:exported="true" >
+
+        <activity android:name=".View.Home.NhanVienCongTy.TrangChuQuanLiNhanSuActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".View.Home.TaiXe.DonHang.ChiTietDonHangActivity"
@@ -105,9 +113,20 @@
             android:name=".View.Home.TaiXe.TaiXeYeuThichActivity"
             android:exported="false" >
         </activity>
+
         <activity android:name=".View.Home.NhanVienCongTy.QuanLyTaiKhoan.QuanLiTaiKhoanActivity" />
         <activity android:name=".View.Home.KhachHang.ThongTinTK_KhachHang" />
+
+        <activity android:name=".View.Home.KhachHang.ThongTinTK_KhachHang"
+            android:exported="true" >
+            <intent-filter>-->
+                <action android:name="android.intent.action.MAIN" />-->
+                <category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>-->
+        </activity>
+
         <activity android:name=".View.Home.TaiXe.ThongTinTK_TaiXe" />
+
     </application>
 
 </manifest>

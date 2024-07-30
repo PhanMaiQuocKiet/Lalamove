@@ -9,11 +9,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.content.Intent;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lalamove.R;
+
 import com.example.lalamove.View.model.TableTaiKhoan.TaiKhoanSQL;
+
+import com.example.lalamove.View.Home.KhachHang.Home_KhachHang;
+import com.example.lalamove.View.Home.KhachHang.ThongTinTK_KhachHang;
+
 import com.example.lalamove.View.model.TableTaiXe.TaiXeSQL;
 import com.example.lalamove.View.model.XacThucvaDinhDang.DinhDang;
 
@@ -59,9 +66,9 @@ public class ThongTinTK_TaiXe extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("ThongTinDangNhap", MODE_PRIVATE);
         soDienThoaiDN = sharedPreferences.getString("sodienthoai", "");
 
-        // Khởi tạo đối tượng TaiXeSQL
         taiXeSQL = new TaiXeSQL();
         taiKhoanSQL = new TaiKhoanSQL();
+
 
         // Xử lý sự kiện nhấn nút quay lại
         btnBack.setOnClickListener(v -> finish());
@@ -95,10 +102,64 @@ public class ThongTinTK_TaiXe extends AppCompatActivity {
             // Giả sử edt_diemdg và edt_loaipt cũng đã được khai báo
             // edt_diemdg.setText(kq2.get(1));
             // edt_loaipt.setText(kq2.get(2));
+
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(ThongTinTK_TaiXe.this, TrangChuTaiXeActivity.class);
+            startActivity(intent);
+        });
+        imgEditName.setOnClickListener(v -> updateName());
+
+        imgEditPhone.setOnClickListener(v -> updatePhone());
+
+        imgEditChucVu.setOnClickListener(v -> updateChucVu());
+
+        imgEditMaPhuongTien.setOnClickListener(v -> updateMaPhuongTien());
+
+        imgEditBienSoPhuongTien.setOnClickListener(v -> updateBienSoPhuongTien());
+    }
+
+    private void updateName() {
+        String name = edtName.getText().toString().trim();
+        String phone = edtPhone.getText().toString().trim();
+        if (!name.isEmpty() && !phone.isEmpty()) {
+            taiXeSQL.updateName(phone, name, this);
+        } else {
+            Toast.makeText(this, "Vui lòng nhập tên và số điện thoại", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void updatePhone() {
+        String newPhone = edtPhone.getText().toString().trim();
+        String oldPhone = "";
+
+        if (!newPhone.isEmpty()) {
+            if (!oldPhone.isEmpty()) {
+                taiXeSQL.updatePhone(oldPhone, newPhone, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại cũ", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Vui lòng nhập số điện thoại mới", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void updateChucVu() {
+        String newChucVu = edtChucVu.getText().toString().trim();
+        String phone = "";
+
+        if (!newChucVu.isEmpty()) {
+            if (!phone.isEmpty()) {
+                taiXeSQL.updateChucVu(phone, newChucVu, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
             Toast.makeText(this, "Không tìm thấy tài khoản", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     private void updatetttk() {
         String ten = edtName.getText().toString();
@@ -110,6 +171,33 @@ public class ThongTinTK_TaiXe extends AppCompatActivity {
     private void doimk() {
         if (!DinhDang.isDinhDangMatKhau(edt_mkmoi.getText().toString())) {
             edt_mkmoi.setError("Sai định dạng mật khẩu");
+
+    private void updateMaPhuongTien() {
+        String newMaPhuongTien = edtMaPhuongTien.getText().toString().trim();
+        String phone = "";
+
+        if (!newMaPhuongTien.isEmpty()) {
+            if (!phone.isEmpty()) {
+                taiXeSQL.updateMaPhuongTien(phone, newMaPhuongTien, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Vui lòng nhập mã phương tiện", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void updateBienSoPhuongTien() {
+        String newBienSoPhuongTien = edtBienSoPhuongTien.getText().toString().trim();
+        String phone = "";
+
+        if (!newBienSoPhuongTien.isEmpty()) {
+            if (!phone.isEmpty()) {
+                taiXeSQL.updateBienSoPhuongTien(phone, newBienSoPhuongTien, this);
+            } else {
+                Toast.makeText(this, "Không tìm thấy số điện thoại", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
             if (mkcu.compareTo(edt_mkcu.getText().toString()) == 0) {
                 taiKhoanSQL.sp_update_mkTaiKhoan(soDienThoai, edt_mkcu.getText().toString(), this);
